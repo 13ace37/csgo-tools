@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>csgo chat spam bind generator</title>
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon"/>
+
+<link rel="stylesheet" href="https://beta.z1lab.com/dist/semantic.min.css">
+<link rel="stylesheet" href="https://xace.ch/css/style.css">
+</head>
+<body class="inverted" style="background: #2E3440;">
+	<main style="align-content: center;">
+	<div class="ui checkbox toggle">
+	  <input type="checkbox" id="wasd">
+	  <label style="color: #EBCB8B !important;">walk-keys (w,a,s,d)</label>
+	</div>
+	<br/><br/>
+	<div class="ui checkbox toggle">
+	  <input type="checkbox" id="mouse">
+	  <label style="color: #EBCB8B !important;">mouse-keys (mouse1, mouse2)</label>
+	</div>
+	<br/><br/>
+	<div class="ui checkbox toggle">
+	  <input type="checkbox" id="space">
+	  <label style="color: #EBCB8B !important;">space</label>
+	</div>
+	<br/><br/>
+	<div class="ui checkbox toggle">
+	  <input type="checkbox" id="cs">
+	  <label style="color: #EBCB8B !important;">ctrl & shift</label>
+	</div>
+	<br/><br/>
+
+	<p>I hope u got them default binds m8, otherwise thing will fuck up u donkey :)</p>
+
+	<br/><br/>
+
+	<div class="ui grey labeled input">
+	  <div class="ui grey label">
+	    Text
+	  </div>
+	  <input id="input" type="text" placeholder="cheat if gay">
+	</div>
+
+	<div class="ui grey labeled input">
+	  <div class="ui grey label">
+	    Bind
+	  </div>
+	  <input id="output" type="text" placeholder="" readonly="readonly">
+	</div>
+
+	<br/><br/>
+
+	<div class="ui buttons" style="align: center; align-content: center;">
+		<button onclick="generateBind()" class="ui blue button">:^)</button>
+	</div>
+	<script>
+		var input = document.getElementById("input");
+		var output = document.getElementById("output");
+		var keys = {
+			wasd: document.getElementById("wasd"),
+			mouse: document.getElementById("mouse"),
+			space: document.getElementById("space"),
+			cs: document.getElementById("cs")
+		}
+
+		
+
+		function generateBind() {
+			let message = input.value.replace(/[^\w\s]/gi, '');
+				
+			output.value = "";
+			if (!input.value) return output.value = "manz need some input";;
+
+			if (keys.wasd.checked) output.value += `bind a "+moveleft; say ${message}"; bind d "+moveright; say ${message}"; bind w "+forward; say ${message}"; bind s "+back; say ${message}"; `;
+			if (keys.mouse.checked) output.value += `bind mouse1 "+attack; say ${message}"; bind mouse2 "+attack2; say ${message}"; `;
+			if (keys.space.checked) output.value += `bind space "+jump; say ${message}"; `;
+			if (keys.cs.checked) output.value += `bind ctrl "+duck; say ${message}"; bind shift "+speed; say ${message}";`;
+
+			if (!output.value) output.value = "manz need some input";
+		}
+
+	</script>
+	</main>
+</body>
+</html>
