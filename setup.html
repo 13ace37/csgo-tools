@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>csgo account setup config</title>
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon"/>
+
+<link rel="stylesheet" href="https://beta.z1lab.com/dist/semantic.min.css">
+<link rel="stylesheet" href="https://xace.ch/css/style.css">
+</head>
+<body class="inverted" style="background: #2E3440;">
+	<main style="align-content: center;">
+
+		<div class="ui small form">
+			<div class="field">
+				<textarea readonly id="output" spellcheck="false"></textarea>
+			</div>
+			<div class="field">
+			    <textarea readonly id="outputConsole" spellcheck="false" rows="2" id="outputConsole"></textarea>
+			</div>
+		</div>
+		<br/> <br/> 
+		<div class="ui blue labeled input">
+		  <div class="ui blue label">
+		    voice key
+		  </div>
+		  <input id="inputVoice" type="text" placeholder="mouse4">
+		</div>
+		<br/> <br/> 
+		<div class="ui buttons" style="align: center; align-content: center;">
+			<button onclick="fetchConfig()" class="ui blue button">:^)</button>
+		</div>
+
+
+	<script src="setup.js"></script>
+	</main>
+</body>
+</html>
